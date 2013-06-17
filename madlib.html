@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Mad Libs</title>
+ </head>
+ <body>
+
+ 	<ul>
+	  <li>Noun: <input type="text" id="noun">
+	  <li>Adjective: <input type="text" id="adjective">
+	  <li>Someone's Name: <input type="text" id="name">
+ </ul>
+  <button id="button">Lib it!</button>
+ 	<script type="text/javascript">
+		var button = document.getElementById('button');
+		function onClick(event) {
+		    var noun = document.getElementById("noun").value;
+		    var adj = document.getElementById("adjective").value;
+		    var name = document.getElementById("name").value;
+		    storyDiv.innerHTML = name+" "+adj+" "+"likes"+" "+noun;
+		} 
+		button.addEventListener('click', onClick);
+  </script>
+ </body>
+</html>

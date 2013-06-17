@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ 	<head>
+  	<meta charset="utf-8" />
+  	<title>Word Guesser</title>
+ 	</head>
+ 	<body>
+
+ 		<p>Guess a letter: <input  type="text" id="guess">
+ 		<button id="button">Guess!</button>
+
+		<script type="text/javascript">
+			var button = document.getElementById('button');
+			var word = ["F","O","X"]
+			var guesses = ["_","_","_"]
+			function guessLetter(event){
+				var guess = document.getElementById("guess").value;
+				var goodGuess = false;
+				var moreToGuess = false;
+				for (i=0; i<guesses.length; i++){
+					if (word[i] == guess){
+						guesses[i] = guess;
+						goodGuess = true;
+					}
+					if (guesses[i] == '_')
+						moreToGuess = true;
+				}
+				if (goodGuess){
+					alert("You guessed a letter!")
+					if (!moreToGuess)
+						alert("You Won!")
+					else
+						alert("Input another letter!")
+
+				}
+				button.addEventListener('click', guessLetter);
+			}
+			
+
+			// guessLetter("F")
+			// guessLetter("A")
+			// guessLetter("X")
+			// guessLetter("T")
+			// guessLetter("O")
+
+
+
+		</script>
+	</body>
+</html>
